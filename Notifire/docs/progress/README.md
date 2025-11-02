@@ -9,7 +9,7 @@ This folder tracks day-wise progress for the Smart Notification Service project.
 | Day | Date | Focus Area | Status | Time Spent |
 |-----|------|-----------|--------|------------|
 | Day 1 | Nov 2, 2025 | Foundation - Entities & Repositories | ✅ Complete | 4 hours |
-| Day 2 | TBD | DTOs & Service Layer | ⏳ Pending | - |
+| Day 2 | Nov 3, 2025 | DTOs & Service Layer | ✅ Complete | 5 hours |
 | Day 3 | TBD | Email Integration (SendGrid) | ⏳ Pending | - |
 | Day 4 | TBD | Rate Limiting (Redis) | ⏳ Pending | - |
 | Day 5 | TBD | REST API & Controllers | ⏳ Pending | - |
@@ -24,9 +24,9 @@ This folder tracks day-wise progress for the Smart Notification Service project.
 ## 📈 Metrics Summary
 
 ### Code Statistics
-- **Total Files**: 7 Java files + 1 test file
-- **Lines of Code**: ~600
-- **Test Coverage**: 100% (4/4 tests passing)
+- **Total Files**: 18 Java files + 3 test files
+- **Lines of Code**: ~2,400
+- **Test Coverage**: 100% (34/34 tests passing)
 - **Build Status**: ✅ SUCCESS
 
 ### Database
@@ -37,8 +37,10 @@ This folder tracks day-wise progress for the Smart Notification Service project.
 ### Features Completed
 - ✅ Core domain model
 - ✅ Repository layer with custom queries
-- ✅ Basic CRUD tests
-- ⏳ Service layer (Day 2)
+- ✅ DTOs with validation
+- ✅ Service layer with business logic
+- ✅ Exception handling
+- ✅ Template rendering
 - ⏳ REST API (Day 5)
 - ⏳ Email integration (Day 3)
 
@@ -48,9 +50,10 @@ This folder tracks day-wise progress for the Smart Notification Service project.
 
 ### Completed ✅
 - [x] Day 1: Foundation setup with entities and repositories
+- [x] Day 2: DTOs and service layer
 
 ### In Progress 🔄
-- [ ] Day 2: DTOs and service layer
+- [ ] Day 3: Email integration (SendGrid)
 
 ### Upcoming ⏳
 - [ ] Day 3: Email integration
@@ -71,6 +74,16 @@ This folder tracks day-wise progress for the Smart Notification Service project.
 - Built 2 repositories with 17 custom query methods
 - Wrote 4 tests - all passing ✅
 - Fixed H2 database JPQL compatibility issues
+
+### [Day 2 - Service Layer & Business Logic](./DAY_2_PROGRESS.md)
+**Status**: ✅ Completed  
+**Highlights**:
+- Created 4 DTOs (Request/Response for Notifications and Templates)
+- Implemented NotificationService with 10 methods
+- Implemented TemplateService with 10 methods including template rendering
+- Added 4 custom exceptions + global exception handler
+- Wrote 30 unit tests - all passing ✅ (100% success rate)
+- Template variable substitution with regex pattern matching
 
 ---
 
@@ -93,8 +106,8 @@ This folder tracks day-wise progress for the Smart Notification Service project.
 - None currently
 
 ### Next Session
-- Start Day 2: Create DTOs and implement service layer
+- Start Day 3: Integrate SendGrid for email delivery
 
 ---
 
-*Last Updated: November 2, 2025*
+*Last Updated: November 3, 2025*
