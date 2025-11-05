@@ -45,6 +45,9 @@ class NotificationServiceTest {
     @Mock
     private TemplateService templateService;
     
+    @Mock
+    private EmailService emailService;
+    
     @InjectMocks
     private NotificationService notificationService;
     

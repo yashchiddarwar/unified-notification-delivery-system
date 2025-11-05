@@ -32,6 +32,7 @@ public class NotificationService {
     private final NotificationRepository notificationRepository;
     private final TemplateRepository templateRepository;
     private final TemplateService templateService;
+    private final EmailService emailService;
     
     /**
      * Send a new notification
@@ -81,7 +82,8 @@ public class NotificationService {
         
         log.info("Notification created with id: {} for recipient: {}", saved.getId(), saved.getRecipient());
         
-        // TODO: Queue notification for async processing (Day 6)
+        // Send email asynchronously
+        emailService.sendEmailAsync(saved.getId());
         
         return mapToResponse(saved, "Notification queued successfully");
     }
@@ -151,6 +153,9 @@ public class NotificationService {
         Notification updated = notificationRepository.save(notification);
         
         log.info("Notification {} queued for retry. Attempt: {}", id, updated.getRetryCount());
+        
+        // Retry with exponential backoff
+        emailService.retryWithBackoff(id, updated.getRetryCount());
         
         return mapToResponse(updated, "Notification queued for retry");
     }

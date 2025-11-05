@@ -29,6 +29,20 @@ spring:
 server:
   port: 8080
 
+# SendGrid Configuration
+sendgrid:
+  api-key: ${SENDGRID_API_KEY:your-sendgrid-api-key-here}
+  from-email: ${SENDGRID_FROM_EMAIL:noreply@notifireservice.com}
+  from-name: ${SENDGRID_FROM_NAME:Notifire Service}
+  enabled: ${SENDGRID_ENABLED:false}
+
+# Async Configuration
+async:
+  core-pool-size: 5
+  max-pool-size: 10
+  queue-capacity: 100
+  thread-name-prefix: async-
+
 # Logging
 logging:
   level:
